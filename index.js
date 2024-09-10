@@ -7,14 +7,27 @@ const port = process.env.PORT || 5000
 
 // app.use(cors())
 
+// app.use(
+//   cors({
+//     origin: [
+//       "https://sparkfilter-client.vercel.app"
+      
+//     ]
+//   })
+// );
+
+
 app.use(
   cors({
     origin: [
-      "https://sparkfilter-client.vercel.app"
-      
-    ]
+      "https://sparkfilter-client.vercel.app", // static origin
+      // "https://spark-filter.com",              // static origin
+      process.env.DOMAIN_ONE,                  // dynamic origin from environment variable
+      process.env.DOMAIN_TWO                   // another dynamic origin
+    ].filter(Boolean) // filter out any undefined/null environment variables
   })
 );
+
 app.use(express.json())
 
 
