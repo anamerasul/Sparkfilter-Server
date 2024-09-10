@@ -12,7 +12,7 @@ app.use(
     origin: [
       "https://sparkfilter-client.vercel.app",
        "https://spark-filter.com",
-      "https://www.spark-filter.com",
+      "https://www.spark-filter.com"
       
     ]
   })
